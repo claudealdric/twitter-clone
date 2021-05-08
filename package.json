@@ -16,5 +16,8 @@
   "scripts": {
     "build": "yarn --cwd api build",
     "start": "yarn --cwd api start"
+  },
+  "devDependencies": {
+    "concurrently": "^6.1.0"
   }
 }
