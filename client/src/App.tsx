@@ -17,7 +17,8 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const getHelloWorld = async () => {
-      const { data } = await axios.get<string>('http://localhost:8080')
+      const url = process.env.REACT_APP_API_URL || 'http://localhost:8080'
+      const { data } = await axios.get<string>(url)
       setSampleText(data)
     }
 
