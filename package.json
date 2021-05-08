@@ -1,4 +1,9 @@
 {
+  "private": true,
+  "workspaces": [
+    "client",
+    "api"
+  ],
   "name": "twitter-clone",
   "version": "1.0.0",
   "main": "index.js",
