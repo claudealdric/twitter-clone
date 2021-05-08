@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "aaron-bond.better-comments",
+    "coenraads.bracket-pair-colorizer-2",
+    "streetsidesoftware.code-spell-checker",
+    "dsznajder.es7-react-js-snippets",
+    "dbaeumer.vscode-eslint",
+    "oderwat.indent-rainbow",
+    "tyriar.sort-lines",
+    "tabnine.tabnine-vscode",
+    "esbenp.prettier-vscode"
+  ]
+}
