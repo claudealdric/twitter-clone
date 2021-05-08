@@ -1,4 +1,7 @@
+import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
+
 import { RootState } from './store'
 import {
   increment,
@@ -10,9 +13,20 @@ import {
 const App: React.FC = () => {
   const dispatch = useDispatch()
   const counter = useSelector((state: RootState) => state.counter)
+  const [sampleText, setSampleText] = useState('')
+
+  useEffect(() => {
+    const getHelloWorld = async () => {
+      const { data } = await axios.get<string>('http://localhost:8080')
+      setSampleText(data)
+    }
+
+    getHelloWorld()
+  }, [])
 
   return (
     <div>
+      <p>API Response: {sampleText}</p>
       <p>Counter: {counter}</p>
       <button type="button" onClick={() => dispatch(increment())}>
         Increment
