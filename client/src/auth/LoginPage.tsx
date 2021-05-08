@@ -2,6 +2,7 @@ import { FormControl, Grid, Input, Box, Typography } from '@material-ui/core'
 import { Link, Redirect } from 'react-router-dom'
 
 export default function LoginPage() {
+  console.log('hi')
   return (
     <Grid item xs={4}>
       <Grid container>

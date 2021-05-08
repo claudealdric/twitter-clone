@@ -1,10 +1,11 @@
 import axios from 'axios'
-import { Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { AppBar, Grid, Typography } from '@material-ui/core'
 
 import LoginPage from './auth/LoginPage'
+import RegisterPage from './auth/RegisterPage'
 
 import { RootState } from './store'
 // import {
@@ -40,6 +41,9 @@ const App: React.FC = () => {
         <Switch>
           <Route path="auth/login">
             <LoginPage />
+          </Route>
+          <Route path="/auth/register">
+            <RegisterPage />
           </Route>
         </Switch>
       </Router>
