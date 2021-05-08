@@ -1,5 +1,6 @@
 import { Provider } from 'react-redux'
 import { render } from 'react-dom'
+import 'dotenv/config'
 
 import App from './App'
 import reportWebVitals from './reportWebVitals'
