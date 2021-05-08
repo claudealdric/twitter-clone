@@ -1,14 +1,18 @@
 import axios from 'axios'
+import { Router, Switch, Route } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
+import { AppBar, Grid, Typography } from '@material-ui/core'
+
+// import LoginPage from './auth/LoginPage'
 
 import { RootState } from './store'
-import {
-  increment,
-  incrementAsync,
-  decrement,
-  decrementAsync,
-} from './slices/counter.slice'
+// import {
+//   increment,
+//   incrementAsync,
+//   decrement,
+//   decrementAsync,
+// } from './slices/counter.slice'
 
 const App: React.FC = () => {
   const dispatch = useDispatch()
@@ -27,7 +31,13 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <p>API Response: {sampleText}</p>
+      <AppBar position="static" style={{ marginBottom: 24 }}>
+        <Typography variant="h6" style={{ padding: 12, textAlign: 'center' }}>
+          Twitterbean
+        </Typography>
+      </AppBar>
+      {/* <Routes /> */}
+      {/* <p>API Response: {sampleText}</p>
       <p>Counter: {counter}</p>
       <button type="button" onClick={() => dispatch(increment())}>
         Increment
@@ -40,7 +50,7 @@ const App: React.FC = () => {
       </button>
       <button type="button" onClick={() => dispatch(decrementAsync())}>
         DecrementAsync
-      </button>
+      </button> */}
     </div>
   )
 }
