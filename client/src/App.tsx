@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { AppBar, Grid, Typography } from '@material-ui/core'
 
-// import LoginPage from './auth/LoginPage'
+import LoginPage from './auth/LoginPage'
 
 import { RootState } from './store'
 // import {
@@ -36,6 +36,13 @@ const App: React.FC = () => {
           Twitterbean
         </Typography>
       </AppBar>
+      <Router>
+        <Switch>
+          <Route path="auth/login">
+            <LoginPage />
+          </Route>
+        </Switch>
+      </Router>
       {/* <Routes /> */}
       {/* <p>API Response: {sampleText}</p>
       <p>Counter: {counter}</p>
