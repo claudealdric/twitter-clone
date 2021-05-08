@@ -1,4 +1,4 @@
-import { FormControl, Grid, Input, Box, Typography } from '@material-ui/core'
+import { FormControl, Grid, Input } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 
 export default function RegisterPage() {
@@ -20,7 +20,7 @@ export default function RegisterPage() {
               <Input type="submit" value="Login"></Input>
             </FormControl>
           </form>
-          Don't have an account? <Link to="/auth/register">Sign Up</Link>.
+          Already have an account? <Link to="/auth/login">Login!</Link>
         </Grid>
       </Grid>
     </Grid>

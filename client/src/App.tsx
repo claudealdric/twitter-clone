@@ -39,7 +39,7 @@ const App: React.FC = () => {
       </AppBar>
       <Router>
         <Switch>
-          <Route path="auth/login">
+          <Route path="/auth/login">
             <LoginPage />
           </Route>
           <Route path="/auth/register">
