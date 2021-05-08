@@ -15,6 +15,7 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn --cwd api build",
+    "dev": "concurrently -n 'api,client' -c 'green,blue' 'yarn --cwd api start:dev' 'yarn --cwd client start'",
     "start": "yarn --cwd api start"
   },
   "devDependencies": {
