@@ -2,10 +2,12 @@ import axios from 'axios'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
-import { AppBar, Grid, Typography } from '@material-ui/core'
 
 import LoginPage from './auth/LoginPage'
 import RegisterPage from './auth/RegisterPage'
+
+import FeedPage from './feed/FeedPage'
+import Navbar from './feed/Navbar'
 
 import { RootState } from './store'
 // import {
@@ -32,11 +34,6 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <AppBar position="static" style={{ marginBottom: 24 }}>
-        <Typography variant="h6" style={{ padding: 12, textAlign: 'center' }}>
-          Twitterbean
-        </Typography>
-      </AppBar>
       <Router>
         <Switch>
           <Route path="/auth/login">
@@ -45,6 +42,12 @@ const App: React.FC = () => {
           <Route path="/auth/register">
             <RegisterPage />
           </Route>
+          <Switch>
+            <Route path="/home" exact>
+              <Navbar />
+              <FeedPage />
+            </Route>
+          </Switch>
         </Switch>
       </Router>
       {/* <Routes /> */}
