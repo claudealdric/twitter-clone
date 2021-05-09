@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import bean from '../images/bean.png'
 
-export default function LandingPage() {
+const LoginPage = () => {
   const styles: { [key: string]: React.CSSProperties } = {
     container: {
       display: 'flex',
@@ -55,3 +55,5 @@ export default function LandingPage() {
     </div>
   )
 }
+
+export default LoginPage
