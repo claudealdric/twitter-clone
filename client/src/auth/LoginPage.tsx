@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import bean from '../images/bean.png'
 
-const LoginPage = () => {
+const LoginPage: React.FC = () => {
   const styles: { [key: string]: React.CSSProperties } = {
     container: {
       display: 'flex',
