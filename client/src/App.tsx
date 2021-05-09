@@ -1,5 +1,10 @@
 import axios from 'axios'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 
@@ -8,6 +13,8 @@ import RegisterPage from './auth/RegisterPage'
 
 import FeedPage from './feed/FeedPage'
 import Navbar from './feed/Navbar'
+
+import LandingPage from './LandingPage'
 
 import { RootState } from './store'
 // import {
@@ -49,6 +56,9 @@ const App: React.FC = () => {
             </Route>
           </Switch>
         </Switch>
+        <Route exact path="/">
+          <Redirect to="/auth/login" />
+        </Route>
       </Router>
       {/* <Routes /> */}
       {/* <p>API Response: {sampleText}</p>

@@ -1,8 +1,9 @@
-import bean from '../images/bean.png'
+import bean from './images/bean.png'
+import Button from '@material-ui/core/Button'
 import { FormControl, Grid, Input } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 
-export default function RegisterPage() {
+export default function LandingPage() {
   const styles: { [key: string]: React.CSSProperties } = {
     container: {
       display: 'flex',
@@ -14,7 +15,7 @@ export default function RegisterPage() {
       width: 200,
       marginRight: 10,
     },
-    login: {
+    signup: {
       textAlign: 'center',
     },
     title: {
@@ -43,8 +44,8 @@ export default function RegisterPage() {
                   <Input type="submit" value="Login"></Input>
                 </FormControl>
               </form>
-              <h4 style={styles.login}>
-                Already have an account? <Link to="/auth/login">Login!</Link>
+              <h4 style={styles.signup}>
+                Don't have an account? <Link to="/auth/register">Sign Up</Link>
               </h4>
             </Grid>
           </Grid>
