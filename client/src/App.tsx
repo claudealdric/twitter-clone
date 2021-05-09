@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom'
 
 import FeedPage from './feed/FeedPage'
-import LandingPage from './LandingPage'
 import LoginPage from './auth/LoginPage'
 import Navbar from './feed/Navbar'
 import RegisterPage from './auth/RegisterPage'
