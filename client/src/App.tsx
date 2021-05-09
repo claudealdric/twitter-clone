@@ -1,17 +1,15 @@
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
   Redirect,
+  Route,
+  Switch,
 } from 'react-router-dom'
 
-import LoginPage from './auth/LoginPage'
-import RegisterPage from './auth/RegisterPage'
-
 import FeedPage from './feed/FeedPage'
-import Navbar from './feed/Navbar'
-
 import LandingPage from './LandingPage'
+import LoginPage from './auth/LoginPage'
+import Navbar from './feed/Navbar'
+import RegisterPage from './auth/RegisterPage'
 
 const App: React.FC = () => {
   return (
