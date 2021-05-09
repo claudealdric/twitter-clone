@@ -22,6 +22,7 @@ export default function LandingPage() {
       textAlign: 'center',
     },
   }
+
   return (
     <div style={styles.container}>
       <img style={styles.image} src={bean} alt="bean cartoon"></img>
