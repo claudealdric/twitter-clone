@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Navbar() {
+const Navbar = () => {
   const classes = useStyles()
   const menuId = 'primary-search-account-menu'
   //   const renderMenu = <Menu></Menu>
@@ -60,3 +60,5 @@ export default function Navbar() {
   //     </AppBar>
   //   )
 }
+
+export default Navbar
