@@ -8,7 +8,7 @@ import {
   Box,
 } from '@material-ui/core'
 
-export default function FeedPage() {
+const FeedPage = () => {
   return (
     <Grid item xs={10}>
       <Paper elevation={2}>
@@ -32,3 +32,5 @@ export default function FeedPage() {
     </Grid>
   )
 }
+
+export default FeedPage
