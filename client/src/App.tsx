@@ -6,9 +6,9 @@ import {
 } from 'react-router-dom'
 
 import FeedPage from './feed/FeedPage'
-import LoginPage from './auth/LoginPage'
+import LoginPage from './auth/Login'
 import Navbar from './feed/Navbar'
-import RegisterPage from './auth/RegisterPage'
+import RegisterPage from './auth/Register'
 
 const App: React.FC = () => {
   return (
