@@ -5,6 +5,7 @@ import {
   Switch,
 } from 'react-router-dom'
 
+import Profile from './pages/home/Profile'
 import FeedPage from './pages/home/Feed'
 import Login from './pages/auth/Login'
 import Navbar from './components/shared/Navbar'
@@ -29,6 +30,10 @@ const App: React.FC = () => {
             <Route path="/home" exact>
               <Navbar />
               <FeedPage />
+            </Route>
+            <Route path="/profile">
+              <Navbar />
+              <Profile />
             </Route>
           </Switch>
         </Switch>

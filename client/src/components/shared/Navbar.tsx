@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {
   AppBar,
   Badge,
@@ -9,7 +10,7 @@ import {
   Typography,
 } from '@material-ui/core'
 import { AccountCircle, ArrowDropDown, Notifications } from '@material-ui/icons'
-import { fade, makeStyles, ThemeProvider } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -43,15 +44,20 @@ const Navbar: React.FC = () => {
                 <Notifications />
               </Badge>
             </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              color="inherit"
+            <Link
+              to="/profile"
+              style={{ color: '#FFF', textDecoration: 'none' }}
             >
-              <AccountCircle />
-            </IconButton>
+              <IconButton
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
+            </Link>
             <IconButton
               aria-label="dropdown"
               aria-controls="dropdown-menu"
@@ -66,6 +72,14 @@ const Navbar: React.FC = () => {
               anchorEl={anchorEl}
               keepMounted
             >
+              <Link
+                to="/home"
+                style={{ color: '#000', textDecoration: 'none' }}
+              >
+                <MenuItem value={10} onClick={handleClose}>
+                  Home
+                </MenuItem>
+              </Link>
               <MenuItem value={10} onClick={handleClose}>
                 Logout
               </MenuItem>
