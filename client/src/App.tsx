@@ -9,12 +9,16 @@ import FeedPage from './pages/home/Feed'
 import Login from './pages/auth/Login'
 import Navbar from './components/shared/Navbar'
 import Register from './pages/auth/Register'
+import Test from './pages/Test'
 
 const App: React.FC = () => {
   return (
     <div>
       <Router>
         <Switch>
+          <Route path="/test">
+            <Test />
+          </Route>
           <Route path="/auth/login">
             <Login />
           </Route>
