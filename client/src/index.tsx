@@ -4,7 +4,7 @@ import 'dotenv/config'
 
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import { store } from './store'
+import { store } from './data/store'
 
 render(
   <Provider store={store}>

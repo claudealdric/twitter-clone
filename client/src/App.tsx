@@ -5,10 +5,10 @@ import {
   Switch,
 } from 'react-router-dom'
 
-import FeedPage from './feed/FeedPage'
-import LoginPage from './auth/Login'
-import Navbar from './feed/Navbar'
-import RegisterPage from './auth/Register'
+import FeedPage from './pages/home/Feed'
+import Login from './pages/auth/Login'
+import Navbar from './components/shared/Navbar'
+import Register from './pages/auth/Register'
 
 const App: React.FC = () => {
   return (
@@ -16,10 +16,10 @@ const App: React.FC = () => {
       <Router>
         <Switch>
           <Route path="/auth/login">
-            <LoginPage />
+            <Login />
           </Route>
           <Route path="/auth/register">
-            <RegisterPage />
+            <Register />
           </Route>
           <Switch>
             <Route path="/home" exact>
