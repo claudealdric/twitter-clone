@@ -1,0 +1,21 @@
+.root {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 200px !important;
+  height: 200px !important;
+  margin-left: 2em;
+}
+
+.header {
+  align-self: flex-start;
+}
+
+.username {
+  font-size: 30px;
+  margin-left: 20px;
+  margin-bottom: 8px;
+}
