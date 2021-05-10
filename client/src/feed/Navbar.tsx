@@ -1,13 +1,13 @@
 import {
   AppBar,
-  IconButton,
-  Toolbar,
   Badge,
-  Typography,
+  IconButton,
   Menu,
   MenuItem,
+  Toolbar,
+  Typography,
 } from '@material-ui/core'
-import { AccountCircle, Notifications, ArrowDropDown } from '@material-ui/icons'
+import { AccountCircle, ArrowDropDown, Notifications } from '@material-ui/icons'
 import { fade, makeStyles, ThemeProvider } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
