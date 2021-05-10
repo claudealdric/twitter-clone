@@ -1,9 +1,13 @@
-import { Button, FormControl, Input } from '@material-ui/core'
+import { Button, FormControl, Input, createMuiTheme } from '@material-ui/core'
 
 import styles from './UserForm.module.css'
 
 export interface ButtonProps {
   buttonText: string
+}
+
+const style = {
+  backgroundColor: '#71c783',
 }
 
 const UserForm: React.FC<ButtonProps> = ({ buttonText }) => {
@@ -16,7 +20,7 @@ const UserForm: React.FC<ButtonProps> = ({ buttonText }) => {
         <Input type="password" id="password" placeholder="Password" />
       </FormControl>
       <FormControl fullWidth>
-        <Button variant="contained" color="primary" className={styles.button}>
+        <Button variant="contained" style={style} className={styles.button}>
           {buttonText}
         </Button>
       </FormControl>

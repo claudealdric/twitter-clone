@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
   }
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar position="static" style={{ backgroundColor: '#71c783' }}>
         <Toolbar>
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 17 new notifications" color="inherit">
@@ -67,13 +67,7 @@ const Navbar: React.FC = () => {
               keepMounted
             >
               <MenuItem value={10} onClick={handleClose}>
-                Ten
-              </MenuItem>
-              <MenuItem value={20} onClick={handleClose}>
-                Twenty
-              </MenuItem>
-              <MenuItem value={30} onClick={handleClose}>
-                Thirty
+                Logout
               </MenuItem>
             </Menu>
           </div>
