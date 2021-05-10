@@ -1,4 +1,4 @@
-import UserPage from '../../components/auth/UserPage'
+import UserPage from 'components/auth/UserPage'
 
 const LoginPage: React.FC = () => {
   return (

@@ -1,4 +1,4 @@
-import UserPage from '../../components/auth/UserPage'
+import UserPage from 'components/auth/UserPage'
 
 const RegisterPage: React.FC = () => {
   return (

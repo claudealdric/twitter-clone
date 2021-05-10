@@ -2,7 +2,7 @@ import { Grid } from '@material-ui/core'
 
 import UserForm from './components/UserForm'
 import UserFormBlurb, { BlurbProps } from './components/UserFormBlurb'
-import bean from '../../images/bean.png'
+import bean from 'images/bean.jpg'
 import styles from './UserPage.module.css'
 import { ButtonProps } from './components/UserForm'
 
