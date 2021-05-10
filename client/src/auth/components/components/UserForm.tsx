@@ -1,6 +1,12 @@
-import { FormControl, Input } from '@material-ui/core'
+import { Button, FormControl, Input } from '@material-ui/core'
 
-const UserForm: React.FC = () => {
+import styles from './UserForm.module.css'
+
+export interface ButtonProps {
+  buttonText: string
+}
+
+const UserForm: React.FC<ButtonProps> = ({ buttonText }) => {
   return (
     <form>
       <FormControl fullWidth>
@@ -10,7 +16,9 @@ const UserForm: React.FC = () => {
         <Input type="password" id="password" placeholder="Password" />
       </FormControl>
       <FormControl fullWidth>
-        <Input type="submit" value="Login"></Input>
+        <Button variant="contained" color="primary" className={styles.button}>
+          {buttonText}
+        </Button>
       </FormControl>
     </form>
   )

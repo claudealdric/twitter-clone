@@ -6,6 +6,7 @@ const LoginPage: React.FC = () => {
       blurbText="Don't have an account?"
       blurbLinkText="Sign up"
       blurbLinkUrl="/auth/register"
+      buttonText="Log in"
     />
   )
 }

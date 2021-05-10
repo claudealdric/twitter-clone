@@ -4,8 +4,9 @@ const RegisterPage: React.FC = () => {
   return (
     <UserPage
       blurbText="Already have an account?"
-      blurbLinkText="Login"
+      blurbLinkText="Log in"
       blurbLinkUrl="/auth/login"
+      buttonText="Sign up"
     />
   )
 }

@@ -4,12 +4,11 @@ import UserForm from './components/UserForm'
 import UserFormBlurb, { BlurbProps } from './components/UserFormBlurb'
 import bean from '../../images/bean.png'
 import styles from './UserPage.module.css'
+import { ButtonProps } from './components/UserForm'
 
-const UserPage: React.FC<BlurbProps> = ({
-  blurbText,
-  blurbLinkText,
-  blurbLinkUrl,
-}) => {
+interface Props extends BlurbProps, ButtonProps {}
+
+const UserPage: React.FC<Props> = (props) => {
   return (
     <div className={styles.container}>
       <img className={styles.image} src={bean} alt="bean cartoon"></img>
@@ -21,11 +20,11 @@ const UserPage: React.FC<BlurbProps> = ({
               {/* Empty grid for spacing */}
             </Grid>
             <Grid>
-              <UserForm />
+              <UserForm buttonText={props.buttonText} />
               <UserFormBlurb
-                blurbText={blurbText}
-                blurbLinkText={blurbLinkText}
-                blurbLinkUrl={blurbLinkUrl}
+                blurbText={props.blurbText}
+                blurbLinkText={props.blurbLinkText}
+                blurbLinkUrl={props.blurbLinkUrl}
               />
             </Grid>
           </Grid>
