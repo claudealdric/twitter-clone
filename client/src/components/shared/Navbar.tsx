@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   AppBar,
   Badge,
@@ -23,7 +24,15 @@ const useStyles = makeStyles((theme) => ({
 const Navbar: React.FC = () => {
   const classes = useStyles()
   const menuId = 'primary-search-account-menu'
-  //   const renderMenu = <Menu></Menu>
+  const [anchorEl, setAnchorEl] = React.useState(null)
+  const open = Boolean(anchorEl)
+  const handleClick = (event: any) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
   return (
     <div className={classes.grow}>
       <AppBar position="static">
@@ -43,22 +52,35 @@ const Navbar: React.FC = () => {
             >
               <AccountCircle />
             </IconButton>
-            <IconButton aria-label="dropdown">
+            <IconButton
+              aria-label="dropdown"
+              aria-controls="dropdown-menu"
+              onClick={handleClick}
+            >
               <ArrowDropDown />
             </IconButton>
+            <Menu
+              id="dropdown-menu"
+              open={open}
+              onClose={handleClose}
+              anchorEl={anchorEl}
+              keepMounted
+            >
+              <MenuItem value={10} onClick={handleClose}>
+                Ten
+              </MenuItem>
+              <MenuItem value={20} onClick={handleClose}>
+                Twenty
+              </MenuItem>
+              <MenuItem value={30} onClick={handleClose}>
+                Thirty
+              </MenuItem>
+            </Menu>
           </div>
         </Toolbar>
       </AppBar>
-      {/* {renderMenu} */}
     </div>
   )
-  //   return (
-  //     <AppBar position="static" style={{ marginBottom: 24 }}>
-  //       <Typography variant="h6" style={{ padding: 12, textAlign: 'center' }}>
-  //         Twitterbean
-  //       </Typography>
-  //     </AppBar>
-  //   )
 }
 
 export default Navbar
