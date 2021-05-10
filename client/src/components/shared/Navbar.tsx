@@ -4,15 +4,14 @@ import {
   AppBar,
   Badge,
   IconButton,
-  Menu,
   MenuItem,
   Toolbar,
-  Typography,
+  Menu,
 } from '@material-ui/core'
 import { AccountCircle, ArrowDropDown, Notifications } from '@material-ui/icons'
 import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   grow: {
     flexGrow: 1,
   },
