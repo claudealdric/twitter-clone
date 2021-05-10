@@ -1,4 +1,4 @@
-import { Button, FormControl, Input, createMuiTheme } from '@material-ui/core'
+import { Button, FormControl, Input } from '@material-ui/core'
 
 import styles from './UserForm.module.css'
 
