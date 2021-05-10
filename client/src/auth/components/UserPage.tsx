@@ -14,7 +14,7 @@ const UserPage: React.FC<BlurbProps> = ({
     <div className={styles.container}>
       <img className={styles.image} src={bean} alt="bean cartoon"></img>
       <div>
-        <h1 className={styles.title}>How You Bean?</h1>
+        <h2 className={styles.title}>How You Bean?</h2>
         <Grid>
           <Grid container>
             <Grid item xs={1}>
