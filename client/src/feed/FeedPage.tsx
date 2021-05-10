@@ -8,7 +8,7 @@ import {
   Box,
 } from '@material-ui/core'
 
-const FeedPage = () => {
+const FeedPage: React.FC = () => {
   return (
     <Grid item xs={10}>
       <Paper elevation={2}>
