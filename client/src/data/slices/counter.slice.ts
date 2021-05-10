@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { AppThunk } from '../store'
+import { AppThunk } from 'data/store'
 
 const counterSlice = createSlice({
   name: 'counter',
