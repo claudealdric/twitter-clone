@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const classes = useStyles()
   const menuId = 'primary-search-account-menu'
   //   const renderMenu = <Menu></Menu>
