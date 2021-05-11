@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.image {
+  width: 200px;
+  margin-right: 10px;
+}
+
+.title {
+  text-align: center;
+}
+
+.button {
+  margin-top: 20px !important;
+}
+
+.blurb {
+  text-align: center;
+}
