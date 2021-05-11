@@ -64,10 +64,10 @@ const FeedPage: React.FC = () => {
       <div className={styles.header}>
         <img className={styles.image} src={bean} alt="feed bean cartoon"></img>
         <div>
-          <h1 className={styles.homeText}>Your tweet is voice activated!</h1>
-          <h4 className={styles.homeSubText}>
+          <p className={styles.homeText}>Your tweet is voice activated!</p>
+          <p className={styles.homeSubText}>
             If there is a mistake, simply say "clear" to start over 😊
-          </h4>
+          </p>
         </div>
       </div>
       <div className={styles.tweets}>

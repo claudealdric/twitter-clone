@@ -19,6 +19,16 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     marginLeft: 'auto',
   },
+  notif: {
+    '& svg': {
+      fontSize: 30,
+    },
+  },
+  profile: {
+    '& svg': {
+      fontSize: 30,
+    },
+  },
 }))
 
 const Navbar: React.FC = () => {
@@ -38,7 +48,11 @@ const Navbar: React.FC = () => {
       <AppBar position="static" style={{ backgroundColor: '#71c783' }}>
         <Toolbar>
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
+            <IconButton
+              className={classes.notif}
+              aria-label="show 17 new notifications"
+              color="inherit"
+            >
               <Badge badgeContent={3} color="secondary">
                 <Notifications />
               </Badge>
@@ -48,6 +62,7 @@ const Navbar: React.FC = () => {
               style={{ color: '#FFF', textDecoration: 'none' }}
             >
               <IconButton
+                className={classes.profile}
                 edge="end"
                 aria-label="account of current user"
                 aria-controls={menuId}

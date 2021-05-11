@@ -22,9 +22,12 @@
 
 .homeText {
   color: #71c783;
+  font-size: 45px;
+  font-weight: 900;
   margin-bottom: 5px;
 }
 
 .homeSubText {
+  font-size: 20px;
   margin-top: 0px;
 }
