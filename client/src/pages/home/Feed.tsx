@@ -2,6 +2,7 @@ import React from 'react'
 import { FormControl, Grid, Input, Paper } from '@material-ui/core'
 
 import styles from './Feed.module.css'
+import bean from 'images/feedbean.png'
 
 const FeedPage: React.FC = () => {
   const window: any = global
@@ -17,6 +18,17 @@ const FeedPage: React.FC = () => {
     return string[0].toUpperCase() + string.slice(1)
   }
 
+  const punctuate = (string: any) => {
+    console.log('string -->', string)
+    if (string.includes('?')) {
+      return ' '
+    } else if (string.includes('!')) {
+      return ' '
+    } else {
+      return '. '
+    }
+  }
+
   const inputRef = React.useRef(inputValue)
   const setInputValue = (data: string) => {
     inputRef.current = data
@@ -26,7 +38,6 @@ const FeedPage: React.FC = () => {
   let status = 0
 
   const handleClick = () => {
-    console.log('status after handleClick ->', status)
     if (status === 1) {
       status = 0
       recognition.stop()
@@ -37,7 +48,10 @@ const FeedPage: React.FC = () => {
     recognition.addEventListener('result', (e) => {
       const transcript = e.results[0][0].transcript
       if (e.results[0].isFinal) {
-        setInputValue(inputRef.current + capitalize(transcript) + '. ')
+        // setInputValue(inputRef.current + capitalize(transcript) + '. ')
+        setInputValue(
+          inputRef.current + capitalize(transcript) + punctuate(transcript)
+        )
       }
       if (transcript.includes('clear')) {
         setInputValue('')
@@ -47,23 +61,31 @@ const FeedPage: React.FC = () => {
   }
   return (
     <div className={styles.root}>
-      <Grid item xs={11}>
-        <Paper elevation={2}>
-          <form>
-            <FormControl fullWidth>
-              <Input
-                id="tweet-input"
-                placeholder="Speak your thoughts here!"
-                onClick={handleClick}
-                value={inputValue}
-              />
-            </FormControl>
-            <FormControl fullWidth>
-              <Input type="submit" value="Tweet"></Input>
-            </FormControl>
-          </form>
-        </Paper>
-        {/* {tweets.map((tweet) => (
+      <div className={styles.header}>
+        <img className={styles.image} src={bean} alt="feed bean cartoon"></img>
+        <div>
+          <h1>Your tweet is voice activated!</h1>
+          <h4>If there is a mistake, simply say "clear" to start over!</h4>
+        </div>
+      </div>
+      <div className={styles.tweets}>
+        <Grid item xs={11}>
+          <Paper elevation={2}>
+            <form>
+              <FormControl fullWidth>
+                <Input
+                  id="tweet-input"
+                  placeholder="Speak your thoughts here!"
+                  onClick={handleClick}
+                  value={inputValue}
+                />
+              </FormControl>
+              <FormControl fullWidth>
+                <Input type="submit" value="Tweet"></Input>
+              </FormControl>
+            </form>
+          </Paper>
+          {/* {tweets.map((tweet) => (
         <Box key={tweet._id} padding={1}>
           <Paper elevation={1}>
             <Box padding={1}>@{tweet.user.handle}</Box>
@@ -71,7 +93,8 @@ const FeedPage: React.FC = () => {
           </Paper>
         </Box>
       ))} */}
-      </Grid>
+        </Grid>
+      </div>
     </div>
   )
 }

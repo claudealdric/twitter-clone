@@ -1,6 +1,30 @@
 .root {
   margin-top: 50px;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+}
+
+.header {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tweets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: #71c783;
+  margin-bottom: 5px;
+}
+
+h4 {
+  margin-top: 0px;
 }
