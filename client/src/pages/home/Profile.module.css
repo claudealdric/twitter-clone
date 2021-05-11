@@ -2,6 +2,7 @@
   margin-top: 50px;
   display: flex;
   align-items: center;
+  margin-bottom: 5em;
 }
 
 .avatar {
@@ -37,4 +38,16 @@
   margin-top: 0;
   text-align: center;
   font-size: 2em;
+}
+
+.button {
+  background-color: #71c783 !important;
+  color: white !important;
+  margin-left: 20px !important;
+}
+
+.list {
+  display: flex;
+  margin-top: 15px !important;
+  align-items: center;
 }
