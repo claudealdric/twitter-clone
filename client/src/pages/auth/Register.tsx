@@ -24,66 +24,72 @@ const Register: React.FC = () => {
   return (
     <div className={styles.container}>
       <img className={styles.image} src={bean} alt="bean cartoon"></img>
-      <div className={styles.formBox}>
-        <h2 className={styles.title}>How You Bean?</h2>
+      <div>
+        <p className={styles.title}>How You Bean?</p>
         <Grid>
           <Grid container>
             <Grid item xs={1}>
               {/* Empty grid for spacing */}
             </Grid>
             <Grid>
-              <form onSubmit={(event) => onSubmit(event)}>
-                <FormControl className={styles.form}>
-                  <Input
-                    id="fullName"
-                    type="text"
-                    placeholder="Name"
-                    value={fullName}
-                    onChange={(event) => setFullName(event.target.value)}
-                  />
-                </FormControl>
+              <div className={styles.inputBox}>
+                <form onSubmit={(event) => onSubmit(event)}>
+                  <FormControl className={styles.form}>
+                    <Input
+                      className={styles.input}
+                      id="fullName"
+                      type="text"
+                      placeholder="Name"
+                      value={fullName}
+                      onChange={(event) => setFullName(event.target.value)}
+                    />
+                  </FormControl>
 
-                <FormControl className={styles.form}>
-                  <Input
-                    id="handle"
-                    type="text"
-                    placeholder="Handle"
-                    value={handle}
-                    onChange={(event) => setHandle(event.target.value)}
-                  />
-                </FormControl>
+                  <FormControl className={styles.form}>
+                    <Input
+                      className={styles.input}
+                      id="handle"
+                      type="text"
+                      placeholder="Handle"
+                      value={handle}
+                      onChange={(event) => setHandle(event.target.value)}
+                    />
+                  </FormControl>
 
-                <FormControl className={styles.form}>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(event) => setEmail(event.target.value)}
-                  />
-                </FormControl>
+                  <FormControl className={styles.form}>
+                    <Input
+                      className={styles.input}
+                      id="email"
+                      type="email"
+                      placeholder="Email"
+                      value={email}
+                      onChange={(event) => setEmail(event.target.value)}
+                    />
+                  </FormControl>
 
-                <FormControl className={styles.form}>
-                  <Input
-                    id="password"
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(event) => setPassword(event.target.value)}
-                  />
-                </FormControl>
+                  <FormControl className={styles.form}>
+                    <Input
+                      className={styles.input}
+                      id="password"
+                      type="password"
+                      placeholder="Password"
+                      value={password}
+                      onChange={(event) => setPassword(event.target.value)}
+                    />
+                  </FormControl>
 
-                <FormControl className={styles.form}>
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    color="primary"
-                    className={styles.button}
-                  >
-                    Sign up
-                  </Button>
-                </FormControl>
-              </form>
+                  <FormControl className={styles.form}>
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      color="primary"
+                      className={styles.button}
+                    >
+                      Sign up
+                    </Button>
+                  </FormControl>
+                </form>
+              </div>
               <p className={styles.blurb}>
                 Already have an account? <Link to="/auth/login">Log in</Link>
               </p>
