@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common'
+import { Body, Controller, Post, ValidationPipe } from '@nestjs/common'
 
 import { AuthService } from './auth.service'
 import { LoginCredentialsDto } from './dto/login-credentials.dto'
@@ -8,7 +8,7 @@ export class AuthController {
   constructor(private readonly service: AuthService) {}
 
   @Post('login')
-  login(@Body() dto: LoginCredentialsDto) {
+  login(@Body(ValidationPipe) dto: LoginCredentialsDto) {
     return this.service.login(dto)
   }
 }
