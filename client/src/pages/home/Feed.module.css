@@ -20,11 +20,11 @@
   align-items: center;
 }
 
-h1 {
+.homeText {
   color: #71c783;
   margin-bottom: 5px;
 }
 
-h4 {
+.homeSubText {
   margin-top: 0px;
 }
