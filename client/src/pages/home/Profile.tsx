@@ -29,21 +29,30 @@ const Profile: React.FC = () => {
           <h1 className={styles.username}>@beanadmin</h1>
           <div className={styles.stats}>
             <span className={styles.span}>
-              <Typography style={{ marginTop: '20px' }} component="h6">
+              <Typography
+                style={{ marginTop: '20px', fontSize: '25px' }}
+                component="h6"
+              >
                 <RateReviewOutlined className={styles.icon} />
                 Total tweets
               </Typography>
               <h1 className={styles.number}>350</h1>
             </span>
             <span className={styles.span}>
-              <Typography style={{ marginTop: '20px' }} component="h6">
+              <Typography
+                style={{ marginTop: '20px', fontSize: '25px' }}
+                component="h6"
+              >
                 <PeopleOutline className={styles.icon} />
                 Followers
               </Typography>
               <h1 className={styles.number}>200</h1>
             </span>
             <span className={styles.span}>
-              <Typography style={{ marginTop: '20px' }} component="h6">
+              <Typography
+                style={{ marginTop: '20px', fontSize: '25px' }}
+                component="h6"
+              >
                 <PeopleAlt className={styles.icon} />
                 Following
               </Typography>
