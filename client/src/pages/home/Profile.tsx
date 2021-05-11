@@ -68,13 +68,22 @@ const Profile: React.FC = () => {
         <List>
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
-              <Avatar alt="Bob" src="https://picsum.photos/500" />
+              <Avatar
+                style={{ width: '50px', height: '50px' }}
+                alt="Bob"
+                src="https://picsum.photos/500"
+              />
             </ListItemAvatar>
             <ListItemText
-              primary="This is my first tweet."
+              primary={
+                <Typography style={{ fontSize: '20px' }}>
+                  This is my first tweet.
+                </Typography>
+              }
               secondary={
                 <React.Fragment>
                   <Typography
+                    className={styles.tweet}
                     component="span"
                     variant="body2"
                     color="textPrimary"
