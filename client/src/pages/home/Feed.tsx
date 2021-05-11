@@ -76,6 +76,7 @@ const FeedPage: React.FC = () => {
             <form>
               <FormControl fullWidth>
                 <Input
+                  className={styles.input}
                   id="tweet-input"
                   placeholder="Speak your thoughts here!"
                   onClick={handleClick}
@@ -83,7 +84,11 @@ const FeedPage: React.FC = () => {
                 />
               </FormControl>
               <FormControl fullWidth>
-                <Input type="submit" value="Tweet"></Input>
+                <Input
+                  className={styles.input}
+                  type="submit"
+                  value="Tweet"
+                ></Input>
               </FormControl>
             </form>
           </Paper>
