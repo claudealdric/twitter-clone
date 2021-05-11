@@ -13,3 +13,13 @@
 .title {
   text-align: center;
 }
+
+.button {
+  margin-top: 20px !important;
+  background-color: #71c783 !important;
+  color: white !important;
+}
+
+.blurb {
+  text-align: center;
+}
