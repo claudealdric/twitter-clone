@@ -1,5 +1,17 @@
 import React from 'react'
-import { FormControl, Grid, Input, Paper } from '@material-ui/core'
+import {
+  FormControl,
+  Grid,
+  Input,
+  Paper,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+  Typography,
+  Divider,
+  Avatar,
+  TextField,
+} from '@material-ui/core'
 
 import styles from './Feed.module.css'
 import bean from 'images/feedbean.png'
@@ -100,6 +112,44 @@ const FeedPage: React.FC = () => {
           </Paper>
         </Box>
       ))} */}
+          <div>
+            <p className={styles.tweetsTitle}>Bean Feed</p>
+            <React.Fragment>
+              <ListItem alignItems="flex-start">
+                <div className={styles.form}>
+                  <ListItemAvatar>
+                    <Avatar alt="avatar" src="https://picsum.photos/500" />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={
+                      <Typography className={styles.fonts}>
+                        So excited to be here!
+                      </Typography>
+                    }
+                    secondary={
+                      <Typography
+                        component="span"
+                        variant="body2"
+                        className={styles.inline}
+                        color="textPrimary"
+                      >
+                        @billybill
+                      </Typography>
+                    }
+                  />
+                  <div className={styles.reply}>
+                    <ListItemAvatar>
+                      <Avatar alt="avatar" src="https://picsum.photos/500" />
+                    </ListItemAvatar>
+                    <form autoComplete="off">
+                      <TextField id="standard-basic" label="Reply here..." />
+                    </form>
+                  </div>
+                </div>
+              </ListItem>
+              <Divider />
+            </React.Fragment>
+          </div>
         </Grid>
       </div>
     </div>

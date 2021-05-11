@@ -35,3 +35,17 @@
 .input {
   font-size: 20px;
 }
+
+.tweetsTitle {
+  font-size: 45px;
+  font-weight: 800;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.reply {
+  display: flex;
+}
