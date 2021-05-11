@@ -6,7 +6,6 @@ import { User } from './user.entity'
 @EntityRepository(User)
 export class UsersRepository extends Repository<User> {
   async createUser(dto: CreateUserDto): Promise<User> {
-    // Create a new user
     const user = new User()
     Object.assign(user, dto)
     await user.save()
