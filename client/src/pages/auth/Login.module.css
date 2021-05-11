@@ -13,3 +13,11 @@
 .title {
   text-align: center;
 }
+
+.button {
+  margin-top: 20px !important;
+}
+
+.blurb {
+  text-align: center;
+}

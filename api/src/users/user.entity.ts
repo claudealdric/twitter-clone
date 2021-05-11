@@ -6,7 +6,10 @@ export class User extends BaseEntity {
   id: ObjectID
 
   @Column()
-  name: string
+  fullName: string
+
+  @Column()
+  handle: string
 
   @Column()
   email: string
