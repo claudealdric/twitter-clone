@@ -1,13 +1,5 @@
 import React from 'react'
-import {
-  // Box,
-  // Button,
-  FormControl,
-  Grid,
-  Input,
-  // InputLabel,
-  Paper,
-} from '@material-ui/core'
+import { FormControl, Grid, Input, Paper } from '@material-ui/core'
 
 import styles from './Feed.module.css'
 
@@ -34,9 +26,11 @@ const FeedPage: React.FC = () => {
   let status = 0
 
   const handleClick = () => {
+    console.log('status after handleClick ->', status)
     if (status === 1) {
       status = 0
-      return recognition.stop()
+      recognition.stop()
+      return
     }
     status = 1
     recognition.start()
@@ -45,8 +39,11 @@ const FeedPage: React.FC = () => {
       if (e.results[0].isFinal) {
         setInputValue(inputRef.current + capitalize(transcript) + '. ')
       }
+      if (transcript.includes('clear')) {
+        setInputValue('')
+      }
+      recognition.addEventListener('end', recognition.start)
     })
-    recognition.addEventListener('end', recognition.start)
   }
   return (
     <div className={styles.root}>
@@ -56,7 +53,7 @@ const FeedPage: React.FC = () => {
             <FormControl fullWidth>
               <Input
                 id="tweet-input"
-                placeholder="What's happening?"
+                placeholder="Speak your thoughts here!"
                 onClick={handleClick}
                 value={inputValue}
               />
