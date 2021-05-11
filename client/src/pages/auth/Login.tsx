@@ -1,7 +1,7 @@
 import { Button, FormControl, Grid, Input } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 
-import bean from 'images/bean.png'
+import bean from 'images/bean.jpg'
 import styles from './Login.module.css'
 
 const Login: React.FC = () => {
