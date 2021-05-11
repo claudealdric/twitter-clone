@@ -65,7 +65,7 @@ const FeedPage: React.FC = () => {
         <img className={styles.image} src={bean} alt="feed bean cartoon"></img>
         <div>
           <h1>Your tweet is voice activated!</h1>
-          <h4>If there is a mistake, simply say "clear" to start over!</h4>
+          <h4>If there is a mistake, simply say "clear" to start over 😊</h4>
         </div>
       </div>
       <div className={styles.tweets}>
