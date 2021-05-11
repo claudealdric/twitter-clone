@@ -17,20 +17,37 @@ const FeedPage: React.FC = () => {
     window.SpeechRecognition || window.webkitSpeechRecognition
   const recognition = new SpeechRecognition()
   recognition.interimResults = true
-  const [inputValue, setInputValue] = React.useState('')
+  const [inputValue, _setInputValue] = React.useState('')
+  // const [inputArray, setInputArray] = React.useState([]);
+  // const inputValues: string[] = []
+
+  const capitalize = (string: any) => {
+    return string[0].toUpperCase() + string.slice(1)
+  }
+
+  const inputRef = React.useRef(inputValue)
+  const setInputValue = (data: string) => {
+    inputRef.current = data
+    _setInputValue(data)
+  }
+
+  let status = 0
 
   const handleClick = () => {
+    if (status === 1) {
+      status = 0
+      return recognition.stop()
+    }
+    status = 1
     recognition.start()
     recognition.addEventListener('result', (e) => {
       const transcript = e.results[0][0].transcript
-      setInputValue(transcript)
       if (e.results[0].isFinal) {
-        setInputValue((prev) => prev + '. ')
+        setInputValue(inputRef.current + capitalize(transcript) + '. ')
       }
     })
     recognition.addEventListener('end', recognition.start)
   }
-
   return (
     <div className={styles.root}>
       <Grid item xs={11}>
