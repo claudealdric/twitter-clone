@@ -1,5 +1,10 @@
 import { Typography, Avatar } from '@material-ui/core'
 import styles from './Profile.module.css'
+import {
+  RateReviewOutlined,
+  PeopleOutline,
+  PeopleAlt,
+} from '@material-ui/icons'
 
 const Profile: React.FC = () => {
   return (
@@ -11,12 +16,29 @@ const Profile: React.FC = () => {
       />
       <div className={styles.header}>
         <h1 className={styles.username}>@beanadmin</h1>
-        <Typography
-          style={{ color: '#5b7083', marginLeft: '20px' }}
-          component="h6"
-        >
-          Total tweets:
-        </Typography>
+        <div className={styles.stats}>
+          <span className={styles.span}>
+            <Typography style={{ marginTop: '20px' }} component="h6">
+              <RateReviewOutlined className={styles.icon} />
+              Total tweets
+            </Typography>
+            <h1 className={styles.number}>350</h1>
+          </span>
+          <span className={styles.span}>
+            <Typography style={{ marginTop: '20px' }} component="h6">
+              <PeopleOutline className={styles.icon} />
+              Followers
+            </Typography>
+            <h1 className={styles.number}>200</h1>
+          </span>
+          <span className={styles.span}>
+            <Typography style={{ marginTop: '20px' }} component="h6">
+              <PeopleAlt className={styles.icon} />
+              Following
+            </Typography>
+            <h1 className={styles.number}>45</h1>
+          </span>
+        </div>
       </div>
     </div>
   )
