@@ -102,6 +102,11 @@ const Navbar: React.FC = () => {
                   Followers
                 </MenuItem>
               </Link>
+              <Link to="/following" className={styles.dropdown}>
+                <MenuItem value={10} onClick={handleClose}>
+                  Following
+                </MenuItem>
+              </Link>
               <MenuItem value={10} onClick={handleClose}>
                 Logout
               </MenuItem>
