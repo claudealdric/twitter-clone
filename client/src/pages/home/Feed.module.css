@@ -48,4 +48,27 @@
 
 .reply {
   display: flex;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.replyInput {
+  width: 100% !important;
+}
+
+.userTweet {
+  font-size: 20px;
+}
+
+.username {
+  font-size: 15px !important;
+}
+
+.tweetsBox {
+  background-color: #d2f3d937 !important;
+  margin-bottom: 25px;
+}
+
+.label {
+  color: black !important;
 }

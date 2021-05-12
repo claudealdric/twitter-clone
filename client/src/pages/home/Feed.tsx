@@ -11,10 +11,12 @@ import {
   Divider,
   Avatar,
   TextField,
+  Box,
 } from '@material-ui/core'
 
 import styles from './Feed.module.css'
 import bean from 'images/feedbean.png'
+import classes from './Feed.module.css'
 
 const FeedPage: React.FC = () => {
   const window: any = global
@@ -23,8 +25,6 @@ const FeedPage: React.FC = () => {
   const recognition = new SpeechRecognition()
   recognition.interimResults = true
   const [inputValue, _setInputValue] = React.useState('')
-  // const [inputArray, setInputArray] = React.useState([]);
-  // const inputValues: string[] = []
 
   const capitalize = (string: any) => {
     return string[0].toUpperCase() + string.slice(1)
@@ -115,39 +115,99 @@ const FeedPage: React.FC = () => {
           <div>
             <p className={styles.tweetsTitle}>Bean Feed</p>
             <React.Fragment>
-              <ListItem alignItems="flex-start">
-                <div className={styles.form}>
-                  <ListItemAvatar>
-                    <Avatar alt="avatar" src="https://picsum.photos/500" />
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary={
-                      <Typography className={styles.fonts}>
-                        So excited to be here!
-                      </Typography>
-                    }
-                    secondary={
-                      <Typography
-                        component="span"
-                        variant="body2"
-                        className={styles.inline}
-                        color="textPrimary"
-                      >
-                        @billybill
-                      </Typography>
-                    }
-                  />
-                  <div className={styles.reply}>
+              <Paper elevation={1} className={styles.tweetsBox}>
+                <ListItem alignItems="flex-start">
+                  <div className={styles.form}>
                     <ListItemAvatar>
                       <Avatar alt="avatar" src="https://picsum.photos/500" />
                     </ListItemAvatar>
-                    <form autoComplete="off">
-                      <TextField id="standard-basic" label="Reply here..." />
-                    </form>
+                    <ListItemText
+                      primary={
+                        <Typography className={styles.userTweet}>
+                          So excited to be here!
+                        </Typography>
+                      }
+                      secondary={
+                        <>
+                          <Typography
+                            className={styles.username}
+                            component="span"
+                            variant="body2"
+                            color="textPrimary"
+                          >
+                            @billybill
+                          </Typography>
+                          {` - 4:00 PM`}
+                        </>
+                      }
+                    />
+                    <div className={styles.reply}>
+                      <ListItemAvatar>
+                        <Avatar alt="avatar" src="https://picsum.photos/500" />
+                      </ListItemAvatar>
+                      <form autoComplete="off">
+                        <FormControl>
+                          <Box width={350}>
+                            <TextField
+                              label="Reply here..."
+                              fullWidth
+                              multiline
+                              InputLabelProps={{ style: { color: 'black' } }}
+                            />
+                          </Box>
+                        </FormControl>
+                      </form>
+                    </div>
                   </div>
-                </div>
-              </ListItem>
+                </ListItem>
+              </Paper>
               <Divider />
+              <Paper elevation={1} className={styles.tweetsBox}>
+                <ListItem alignItems="flex-start">
+                  <div className={styles.form}>
+                    <ListItemAvatar>
+                      <Avatar alt="avatar" src="https://picsum.photos/500" />
+                    </ListItemAvatar>
+                    <ListItemText
+                      primary={
+                        <Typography className={styles.userTweet}>
+                          Eating pasta for lunch!
+                        </Typography>
+                      }
+                      secondary={
+                        <>
+                          <Typography
+                            className={styles.username}
+                            component="span"
+                            variant="body2"
+                            color="textPrimary"
+                          >
+                            @chefbob
+                          </Typography>
+                          {` - 3:00 PM`}
+                        </>
+                      }
+                    />
+                    <div className={styles.reply}>
+                      <ListItemAvatar>
+                        <Avatar alt="avatar" src="https://picsum.photos/500" />
+                      </ListItemAvatar>
+                      <form autoComplete="off">
+                        <FormControl>
+                          <Box width={350}>
+                            <TextField
+                              label="Reply here..."
+                              fullWidth
+                              multiline
+                              InputLabelProps={{ style: { color: 'black' } }}
+                            />
+                          </Box>
+                        </FormControl>
+                      </form>
+                    </div>
+                  </div>
+                </ListItem>
+              </Paper>
             </React.Fragment>
           </div>
         </Grid>
