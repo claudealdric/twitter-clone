@@ -16,7 +16,6 @@ import {
 
 import styles from './Feed.module.css'
 import bean from 'images/feedbean.png'
-import classes from './Feed.module.css'
 
 const FeedPage: React.FC = () => {
   const window: any = global
