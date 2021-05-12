@@ -97,9 +97,9 @@ const Navbar: React.FC = () => {
               anchorEl={anchorEl}
               keepMounted
             >
-              <Link to="/home" className={styles.dropdown}>
+              <Link to="/followers" className={styles.dropdown}>
                 <MenuItem value={10} onClick={handleClose}>
-                  Home
+                  Followers
                 </MenuItem>
               </Link>
               <MenuItem value={10} onClick={handleClose}>
