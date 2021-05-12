@@ -9,6 +9,7 @@ import Profile from './pages/home/Profile'
 import FeedPage from './pages/home/Feed'
 import Login from './pages/auth/Login'
 import Navbar from './components/shared/Navbar'
+import Followers from './pages/home/Followers'
 import Register from './pages/auth/Register'
 import Test from './pages/Test'
 
@@ -34,6 +35,10 @@ const App: React.FC = () => {
             <Route path="/profile">
               <Navbar />
               <Profile />
+            </Route>
+            <Route path="/followers" exact>
+              <Navbar />
+              <Followers />
             </Route>
           </Switch>
         </Switch>
