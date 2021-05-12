@@ -11,6 +11,7 @@ import {
 const Followers: React.FC = () => {
   return (
     <div>
+      <p>Followers</p>
       <Grid item xs={2}>
         <Paper elevation={1}>
           <List>
