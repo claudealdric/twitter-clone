@@ -1,7 +1,6 @@
 import {
   Grid,
   Paper,
-  List,
   ListItem,
   ListItemAvatar,
   Avatar,
