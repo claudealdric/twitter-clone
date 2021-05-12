@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {
   Typography,
   Avatar,
@@ -36,18 +37,22 @@ const Profile: React.FC = () => {
               <h1 className={styles.number}>350</h1>
             </span>
             <span className={styles.span}>
-              <Typography className={styles.heading}>
-                <PeopleOutline className={styles.icon} />
-                Followers
-              </Typography>
-              <h1 className={styles.number}>200</h1>
+              <Link to="/followers" className={styles.link}>
+                <Typography className={styles.heading}>
+                  <PeopleOutline className={styles.icon} />
+                  Followers
+                </Typography>
+                <h1 className={styles.number}>200</h1>
+              </Link>
             </span>
             <span className={styles.span}>
-              <Typography className={styles.heading}>
-                <PeopleAlt className={styles.icon} />
-                Following
-              </Typography>
-              <h1 className={styles.number}>45</h1>
+              <Link to="/following" className={styles.link}>
+                <Typography className={styles.heading}>
+                  <PeopleAlt className={styles.icon} />
+                  Following
+                </Typography>
+                <h1 className={styles.number}>45</h1>
+              </Link>
             </span>
           </div>
           <Button className={styles.button} variant="contained">
