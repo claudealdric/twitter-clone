@@ -56,3 +56,17 @@
 .tweet {
   font-size: 15px !important;
 }
+
+.heading {
+  margin-top: 20px !important;
+  font-size: 25px !important;
+}
+
+.tweetAvatar {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.tweetText {
+  font-size: 20px !important;
+}

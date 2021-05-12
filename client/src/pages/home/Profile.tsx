@@ -29,30 +29,21 @@ const Profile: React.FC = () => {
           <h1 className={styles.username}>@beanadmin</h1>
           <div className={styles.stats}>
             <span className={styles.span}>
-              <Typography
-                style={{ marginTop: '20px', fontSize: '25px' }}
-                component="h6"
-              >
+              <Typography className={styles.heading}>
                 <RateReviewOutlined className={styles.icon} />
                 Total tweets
               </Typography>
               <h1 className={styles.number}>350</h1>
             </span>
             <span className={styles.span}>
-              <Typography
-                style={{ marginTop: '20px', fontSize: '25px' }}
-                component="h6"
-              >
+              <Typography className={styles.heading}>
                 <PeopleOutline className={styles.icon} />
                 Followers
               </Typography>
               <h1 className={styles.number}>200</h1>
             </span>
             <span className={styles.span}>
-              <Typography
-                style={{ marginTop: '20px', fontSize: '25px' }}
-                component="h6"
-              >
+              <Typography className={styles.heading}>
                 <PeopleAlt className={styles.icon} />
                 Following
               </Typography>
@@ -69,25 +60,20 @@ const Profile: React.FC = () => {
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar
-                style={{ width: '50px', height: '50px' }}
+                className={styles.tweetAvatar}
                 alt="Bob"
                 src="https://picsum.photos/500"
               />
             </ListItemAvatar>
             <ListItemText
               primary={
-                <Typography style={{ fontSize: '20px' }}>
+                <Typography className={styles.tweetText}>
                   This is my first tweet.
                 </Typography>
               }
               secondary={
                 <React.Fragment>
-                  <Typography
-                    className={styles.tweet}
-                    component="span"
-                    variant="body2"
-                    color="textPrimary"
-                  >
+                  <Typography className={styles.tweet} color="textPrimary">
                     @beanadmin
                   </Typography>
                 </React.Fragment>
