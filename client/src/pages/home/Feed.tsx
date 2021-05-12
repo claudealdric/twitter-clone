@@ -23,14 +23,13 @@ const FeedPage: React.FC = () => {
     window.SpeechRecognition || window.webkitSpeechRecognition
   const recognition = new SpeechRecognition()
   recognition.interimResults = true
-  const [inputValue, _setInputValue] = React.useState('')
+  const [tweet, setTweet] = React.useState('')
 
-  const capitalize = (string: any) => {
+  const capitalize = (string: string) => {
     return string[0].toUpperCase() + string.slice(1)
   }
 
-  const punctuate = (string: any) => {
-    console.log('string -->', string)
+  const punctuate = (string: string) => {
     if (string.includes('?')) {
       return ' '
     } else if (string.includes('!')) {
@@ -40,10 +39,10 @@ const FeedPage: React.FC = () => {
     }
   }
 
-  const inputRef = React.useRef(inputValue)
+  const inputRef = React.useRef(tweet)
   const setInputValue = (data: string) => {
     inputRef.current = data
-    _setInputValue(data)
+    setTweet(data)
   }
 
   let status = 0
@@ -91,7 +90,7 @@ const FeedPage: React.FC = () => {
                   id="tweet-input"
                   placeholder="Speak your thoughts here!"
                   onClick={handleClick}
-                  value={inputValue}
+                  value={tweet}
                 />
               </FormControl>
               <FormControl fullWidth>
