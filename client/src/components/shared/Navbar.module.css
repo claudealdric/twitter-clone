@@ -1,0 +1,22 @@
+.container {
+  flex-grow: 1;
+}
+
+.appbar {
+  background-color: #71c783 !important;
+}
+
+.sectionDesktop {
+  display: flex;
+  margin-left: auto;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdown {
+  color: #000;
+  text-decoration: none;
+}
