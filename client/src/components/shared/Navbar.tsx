@@ -8,7 +8,12 @@ import {
   Toolbar,
   Menu,
 } from '@material-ui/core'
-import { AccountCircle, ArrowDropDown, Notifications } from '@material-ui/icons'
+import {
+  AccountCircle,
+  ArrowDropDown,
+  Notifications,
+  Home,
+} from '@material-ui/icons'
 import { makeStyles } from '@material-ui/core/styles'
 
 import styles from './Navbar.module.css'
@@ -20,6 +25,11 @@ const useStyles = makeStyles(() => ({
     },
   },
   profile: {
+    '& svg': {
+      fontSize: 30,
+    },
+  },
+  home: {
     '& svg': {
       fontSize: 30,
     },
@@ -52,10 +62,19 @@ const Navbar: React.FC = () => {
                 <Notifications />
               </Badge>
             </IconButton>
+            <Link to="/home" className={styles.link}>
+              <IconButton
+                className={classes.home}
+                aria-label="home"
+                aria-haspopup="true"
+                color="inherit"
+              >
+                <Home />
+              </IconButton>
+            </Link>
             <Link to="/profile" className={styles.link}>
               <IconButton
                 className={classes.profile}
-                edge="end"
                 aria-label="account of current user"
                 aria-controls={menuId}
                 aria-haspopup="true"
