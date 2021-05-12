@@ -8,7 +8,9 @@ export class AuthController {
   constructor(private readonly service: AuthService) {}
 
   @Post('login')
-  login(@Body(ValidationPipe) dto: LoginCredentialsDto) {
+  login(
+    @Body(ValidationPipe) dto: LoginCredentialsDto
+  ): Promise<{ token: string }> {
     return this.service.login(dto)
   }
 }

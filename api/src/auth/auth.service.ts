@@ -15,7 +15,7 @@ export class AuthService {
     private readonly usersRepository: UsersRepository
   ) {}
 
-  async login(dto: LoginCredentialsDto) {
+  async login(dto: LoginCredentialsDto): Promise<{ token: string }> {
     // Destructure needed variables
     const { handle, password } = dto
 
