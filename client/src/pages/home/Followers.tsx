@@ -8,21 +8,33 @@ import {
   ListItemText,
 } from '@material-ui/core'
 
+import styles from './Followers.module.css'
+
 const Followers: React.FC = () => {
   return (
-    <div>
-      <p>Followers</p>
-      <Grid item xs={2}>
-        <Paper elevation={1}>
-          <List>
-            <ListItem>
+    <div className={styles.root}>
+      <p className={styles.heading}>Followers</p>
+      <Grid container className={styles.listContainer}>
+        <Grid className={styles.grid} item>
+          <Paper elevation={1}>
+            <ListItem className={styles.listItem}>
               <ListItemAvatar>
                 <Avatar alt="avatar" src="https://picsum.photos/500" />
               </ListItemAvatar>
               <ListItemText primary="@bobbybeans" />
             </ListItem>
-          </List>
-        </Paper>
+          </Paper>
+        </Grid>
+        <Grid className={styles.grid} item>
+          <Paper elevation={1}>
+            <ListItem className={styles.listItem}>
+              <ListItemAvatar>
+                <Avatar alt="avatar" src="https://picsum.photos/500" />
+              </ListItemAvatar>
+              <ListItemText primary="@billybill" />
+            </ListItem>
+          </Paper>
+        </Grid>
       </Grid>
     </div>
   )
