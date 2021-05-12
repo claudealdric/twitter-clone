@@ -3,7 +3,7 @@ import { Injectable, UnauthorizedException } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import { compare } from 'bcrypt'
 
-import { LoginCredentialsDto } from './dto/login-credentials.dto'
+import { LoginCredentialsDto } from './dto'
 import { UsersRepository } from 'users/users.repository'
 
 @Injectable()
