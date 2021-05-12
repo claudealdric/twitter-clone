@@ -1,7 +1,7 @@
 import { Button, FormControl, Grid, Input } from '@material-ui/core'
 import { useState } from 'react'
 
-import bean from 'images/bean.png'
+import bean from 'images/bean.jpg'
 import styles from './Register.module.css'
 import { Link } from 'react-router-dom'
 import { usersEndpoint } from 'api'

@@ -37,14 +37,21 @@
 .number {
   margin-top: 0;
   text-align: center;
+<<<<<<< HEAD
   font-size: 2.5em;
+=======
+  font-size: 2em;
+>>>>>>> 30a10c72df294ecf70ce65b82f5056574128dde8
 }
 
 .button {
   background-color: #71c783 !important;
   color: white !important;
   margin-left: 20px !important;
+<<<<<<< HEAD
   font-size: 20px !important;
+=======
+>>>>>>> 30a10c72df294ecf70ce65b82f5056574128dde8
 }
 
 .list {
@@ -52,7 +59,10 @@
   margin-top: 15px !important;
   align-items: center;
 }
+<<<<<<< HEAD
 
 .tweet {
   font-size: 15px !important;
 }
+=======
+>>>>>>> 30a10c72df294ecf70ce65b82f5056574128dde8

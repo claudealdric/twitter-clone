@@ -62,7 +62,10 @@ const Navbar: React.FC = () => {
               style={{ color: '#FFF', textDecoration: 'none' }}
             >
               <IconButton
+<<<<<<< HEAD
                 className={classes.profile}
+=======
+>>>>>>> 30a10c72df294ecf70ce65b82f5056574128dde8
                 edge="end"
                 aria-label="account of current user"
                 aria-controls={menuId}
