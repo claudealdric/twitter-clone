@@ -1,20 +1,21 @@
 import { Link } from 'react-router-dom'
 import {
-  Typography,
   Avatar,
   Button,
-  List,
-  ListItemText,
-  ListItemAvatar,
-  ListItem,
   Divider,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+  Typography,
 } from '@material-ui/core'
-import styles from './Profile.module.css'
 import {
-  RateReviewOutlined,
-  PeopleOutline,
   PeopleAlt,
+  PeopleOutline,
+  RateReviewOutlined,
 } from '@material-ui/icons'
+
+import styles from './Profile.module.css'
 
 const Profile: React.FC = () => {
   return (
