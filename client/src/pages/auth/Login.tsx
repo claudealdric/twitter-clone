@@ -21,7 +21,9 @@ const Login: React.FC = () => {
         '/login',
         requestBody
       )
-      console.log(data)
+
+      // Store token in session storage
+      sessionStorage.setItem('token', data.token)
     } catch (error) {}
   }
 
