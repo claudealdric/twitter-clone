@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import {
   Avatar,
@@ -78,11 +77,11 @@ const Profile: React.FC = () => {
                 </Typography>
               }
               secondary={
-                <React.Fragment>
+                <>
                   <Typography className={styles.tweet} color="textPrimary">
                     @beanadmin
                   </Typography>
-                </React.Fragment>
+                </>
               }
             />
           </ListItem>
