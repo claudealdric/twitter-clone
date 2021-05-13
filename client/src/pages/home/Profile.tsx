@@ -16,8 +16,15 @@ import {
 } from '@material-ui/icons'
 
 import styles from './Profile.module.css'
+import { useUser } from 'hooks'
 
 const Profile: React.FC = () => {
+  const user = useUser()
+
+  if (!user) {
+    return <div>Loading...</div>
+  }
+
   return (
     <div>
       <div className={styles.root}>
@@ -27,7 +34,7 @@ const Profile: React.FC = () => {
           src="https://picsum.photos/500"
         />
         <div className={styles.header}>
-          <h1 className={styles.username}>@beanadmin</h1>
+          <h1 className={styles.username}>@{user.handle}</h1>
           <div className={styles.stats}>
             <span className={styles.span}>
               <Typography className={styles.heading}>
@@ -79,7 +86,7 @@ const Profile: React.FC = () => {
               secondary={
                 <>
                   <Typography className={styles.tweet} color="textPrimary">
-                    @beanadmin
+                    @{user.handle}
                   </Typography>
                 </>
               }
