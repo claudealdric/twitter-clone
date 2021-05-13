@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   AppBar,
@@ -39,7 +39,7 @@ const useStyles = makeStyles(() => ({
 const Navbar: React.FC = () => {
   const classes = useStyles()
   const menuId = 'primary-search-account-menu'
-  const [anchorEl, setAnchorEl] = React.useState(null)
+  const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget)
