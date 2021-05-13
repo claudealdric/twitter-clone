@@ -70,3 +70,8 @@
 .tweetText {
   font-size: 20px !important;
 }
+
+.link {
+  color: #000;
+  text-decoration: none;
+}
