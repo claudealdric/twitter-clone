@@ -14,13 +14,15 @@ const Login: React.FC = () => {
     // Prevent page refresh
     event.preventDefault()
 
-    // Submit form data to API
-    const requestBody = { handle, password }
-    const { data } = await authEndpoint.post<{ token: string }>(
-      '/login',
-      requestBody
-    )
-    console.log(data)
+    try {
+      // Submit form data to API
+      const requestBody = { handle, password }
+      const { data } = await authEndpoint.post<{ token: string }>(
+        '/login',
+        requestBody
+      )
+      console.log(data)
+    } catch (error) {}
   }
 
   return (
