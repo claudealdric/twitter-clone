@@ -37,16 +37,22 @@ const useStyles = makeStyles(() => ({
 }))
 
 const Navbar: React.FC = () => {
-  const classes = useStyles()
-  const menuId = 'primary-search-account-menu'
   const [anchorEl, setAnchorEl] = useState(null)
+  const classes = useStyles()
+
+  const menuId = 'primary-search-account-menu'
   const open = Boolean(anchorEl)
+
   const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget)
   }
 
-  const handleClose = () => {
+  const handleClose = (event: any) => {
     setAnchorEl(null)
+
+    if (event.target.id === 'logout') {
+      sessionStorage.removeItem('token')
+    }
   }
   return (
     <div className={styles.container}>
@@ -107,8 +113,8 @@ const Navbar: React.FC = () => {
                   Following
                 </MenuItem>
               </Link>
-              <MenuItem value={10} onClick={handleClose}>
-                Logout
+              <MenuItem value={10} onClick={handleClose} id="logout">
+                Log out
               </MenuItem>
             </Menu>
           </div>
