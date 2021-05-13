@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   Avatar,
@@ -16,8 +17,28 @@ import {
 } from '@material-ui/icons'
 
 import styles from './Profile.module.css'
+import { User } from 'interfaces'
+import { verify } from 'jsonwebtoken'
 
 const Profile: React.FC = () => {
+  const [user, setUser] = useState<User>()
+
+  useEffect(() => {
+    const token = sessionStorage.getItem('token')
+
+    if (token) {
+      const decoded = verify(
+        token,
+        process.env.REACT_APP_JWT_SECRET as string
+      ) as User
+      setUser(decoded)
+    }
+  }, [])
+
+  if (!user) {
+    return <div>Loading...</div>
+  }
+
   return (
     <div>
       <div className={styles.root}>
@@ -27,7 +48,7 @@ const Profile: React.FC = () => {
           src="https://picsum.photos/500"
         />
         <div className={styles.header}>
-          <h1 className={styles.username}>@beanadmin</h1>
+          <h1 className={styles.username}>@{user.handle}</h1>
           <div className={styles.stats}>
             <span className={styles.span}>
               <Typography className={styles.heading}>
@@ -79,7 +100,7 @@ const Profile: React.FC = () => {
               secondary={
                 <>
                   <Typography className={styles.tweet} color="textPrimary">
-                    @beanadmin
+                    @{user.handle}
                   </Typography>
                 </>
               }
