@@ -4,20 +4,25 @@ import {
   AppBar,
   Badge,
   IconButton,
-  Menu,
   MenuItem,
   Toolbar,
+  Menu,
 } from '@material-ui/core'
 import { AccountCircle, ArrowDropDown, Notifications } from '@material-ui/icons'
 import { makeStyles } from '@material-ui/core/styles'
 
+import styles from './Navbar.module.css'
+
 const useStyles = makeStyles(() => ({
-  grow: {
-    flexGrow: 1,
+  notif: {
+    '& svg': {
+      fontSize: 30,
+    },
   },
-  sectionDesktop: {
-    display: 'flex',
-    marginLeft: 'auto',
+  profile: {
+    '& svg': {
+      fontSize: 30,
+    },
   },
 }))
 
@@ -34,20 +39,22 @@ const Navbar: React.FC = () => {
     setAnchorEl(null)
   }
   return (
-    <div className={classes.grow}>
-      <AppBar position="static" style={{ backgroundColor: '#71c783' }}>
+    <div className={styles.container}>
+      <AppBar position="static" className={styles.appbar}>
         <Toolbar>
-          <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
+          <div className={styles.sectionDesktop}>
+            <IconButton
+              className={classes.notif}
+              aria-label="show 17 new notifications"
+              color="inherit"
+            >
               <Badge badgeContent={3} color="secondary">
                 <Notifications />
               </Badge>
             </IconButton>
-            <Link
-              to="/profile"
-              style={{ color: '#FFF', textDecoration: 'none' }}
-            >
+            <Link to="/profile" className={styles.link}>
               <IconButton
+                className={classes.profile}
                 edge="end"
                 aria-label="account of current user"
                 aria-controls={menuId}
@@ -71,10 +78,7 @@ const Navbar: React.FC = () => {
               anchorEl={anchorEl}
               keepMounted
             >
-              <Link
-                to="/home"
-                style={{ color: '#000', textDecoration: 'none' }}
-              >
+              <Link to="/home" className={styles.dropdown}>
                 <MenuItem value={10} onClick={handleClose}>
                   Home
                 </MenuItem>

@@ -1,6 +1,74 @@
 .root {
   margin-top: 50px;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+}
+
+.header {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tweets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeText {
+  color: #71c783;
+  font-size: 45px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.homeSubText {
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+.input {
+  font-size: 20px;
+}
+
+.tweetsTitle {
+  font-size: 45px;
+  font-weight: 800;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.reply {
+  display: flex;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.replyInput {
+  width: 100% !important;
+}
+
+.userTweet {
+  font-size: 20px;
+}
+
+.username {
+  font-size: 15px !important;
+}
+
+.tweetsBox {
+  background-color: #d2f3d937 !important;
+  margin-bottom: 25px;
+}
+
+.label {
+  color: black !important;
 }

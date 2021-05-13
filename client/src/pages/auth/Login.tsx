@@ -9,7 +9,7 @@ const Login: React.FC = () => {
     <div className={styles.container}>
       <img className={styles.image} src={bean} alt="bean cartoon"></img>
       <div>
-        <h2 className={styles.title}>How You Bean?</h2>
+        <p className={styles.title}>How You Bean?</p>
         <Grid>
           <Grid container>
             <Grid item xs={1}>
@@ -18,17 +18,22 @@ const Login: React.FC = () => {
             <Grid>
               <form>
                 <FormControl fullWidth>
-                  <Input id="handle" placeholder="Handle" />
+                  <Input
+                    className={styles.input}
+                    id="handle"
+                    placeholder="Handle"
+                  />
                 </FormControl>
                 <FormControl fullWidth>
-                  <Input type="password" id="password" placeholder="Password" />
+                  <Input
+                    className={styles.input}
+                    type="password"
+                    id="password"
+                    placeholder="Password"
+                  />
                 </FormControl>
                 <FormControl fullWidth>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    className={styles.button}
-                  >
+                  <Button variant="contained" className={styles.button}>
                     Log in
                   </Button>
                 </FormControl>
