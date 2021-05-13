@@ -4,16 +4,23 @@ import { useState } from 'react'
 
 import bean from 'images/bean.jpg'
 import styles from './Login.module.css'
+import { authEndpoint } from 'api'
 
 const Login: React.FC = () => {
   const [handle, setHandle] = useState('')
   const [password, setPassword] = useState('')
 
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     // Prevent page refresh
     event.preventDefault()
 
-    console.table({ handle, password })
+    // Submit form data to API
+    const requestBody = { handle, password }
+    const { data } = await authEndpoint.post<{ token: string }>(
+      '/login',
+      requestBody
+    )
+    console.log(data)
   }
 
   return (
