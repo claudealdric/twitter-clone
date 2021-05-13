@@ -1,5 +1,5 @@
 import { Button, FormControl, Grid, Input } from '@material-ui/core'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { useState } from 'react'
 
 import bean from 'images/bean.jpg'
@@ -9,6 +9,7 @@ import { authEndpoint } from 'api'
 const Login: React.FC = () => {
   const [handle, setHandle] = useState('')
   const [password, setPassword] = useState('')
+  const [redirect, setRedirect] = useState(false)
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     // Prevent page refresh
@@ -24,7 +25,14 @@ const Login: React.FC = () => {
 
       // Store token in session storage
       sessionStorage.setItem('token', data.token)
+
+      // Trigger redirect using redirect state
+      setRedirect(true)
     } catch (error) {}
+  }
+
+  if (redirect) {
+    return <Redirect to="/home" />
   }
 
   return (
