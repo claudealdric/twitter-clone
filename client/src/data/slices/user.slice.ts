@@ -8,10 +8,12 @@ enum UserLoadingStates {
   idle = 'idle',
 }
 
+const initialState = { handle: '', fullName: '' }
+
 const userSlice = createSlice({
   name: 'user',
   initialState: {
-    user: { handle: '', fullName: '' },
+    user: { ...initialState },
     loading: UserLoadingStates.idle,
   },
   reducers: {
