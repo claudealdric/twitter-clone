@@ -1,5 +1,7 @@
 import { Router, Redirect, Route, Switch } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { verify } from 'jsonwebtoken'
 
 import FeedPage from './pages/home/Feed'
 import Followers from './pages/home/Followers'
@@ -10,10 +12,33 @@ import Profile from './pages/home/Profile'
 import Register from './pages/auth/Register'
 import history from 'utils/history'
 import { RootState } from 'data/store'
+import { User } from 'interfaces'
+import { setUser } from 'data/slices/user.slice'
+import { usersEndpoint } from 'api'
 
 const App: React.FC = () => {
+  const dispatch = useDispatch()
   const user = useSelector((state: RootState) => state.user)
-  const loggedIn = () => Boolean(user.user.handle)
+  const loggedIn = () => Boolean(sessionStorage.getItem('token'))
+
+  useEffect(() => {
+    const getUser = async () => {
+      const token = sessionStorage.getItem('token')
+
+      if (token && user.user.handle === '') {
+        // Get user information from verified token
+        const decoded = verify(
+          token,
+          process.env.REACT_APP_JWT_SECRET as string
+        ) as Pick<User, 'handle'>
+
+        const { data } = await usersEndpoint.get<User>(`/${decoded.handle}`)
+        dispatch(setUser(data.handle))
+      }
+    }
+
+    getUser()
+  }, [dispatch, user.user.handle])
 
   return (
     <Router history={history}>
