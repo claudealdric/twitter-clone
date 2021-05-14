@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 import history from 'utils/history'
 import { AppThunk } from 'data/store'
+import { User } from 'interfaces'
 import { usersEndpoint } from 'api'
 
 enum UserLoadingStates {
@@ -9,7 +10,7 @@ enum UserLoadingStates {
   idle = 'idle',
 }
 
-const initialState = { handle: '', fullName: '' }
+const initialState: User = { handle: '', fullName: '', email: '' }
 
 const userSlice = createSlice({
   name: 'user',
