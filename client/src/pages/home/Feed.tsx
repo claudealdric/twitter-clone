@@ -14,8 +14,8 @@ import {
   Box,
 } from '@material-ui/core'
 
-import styles from './Feed.module.css'
 import bean from 'images/feedbean.png'
+import styles from './Feed.module.css'
 
 const FeedPage: React.FC = () => {
   const window: any = global
@@ -102,14 +102,6 @@ const FeedPage: React.FC = () => {
               </FormControl>
             </form>
           </Paper>
-          {/* {tweets.map((tweet) => (
-        <Box key={tweet._id} padding={1}>
-          <Paper elevation={1}>
-            <Box padding={1}>@{tweet.user.handle}</Box>
-            <Box padding={1}>{tweet.text}</Box>
-          </Paper>
-        </Box>
-      ))} */}
           <div>
             <p className={styles.tweetsTitle}>Bean Feed</p>
             <React.Fragment>
