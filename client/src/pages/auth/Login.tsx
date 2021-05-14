@@ -8,7 +8,7 @@ import bean from 'images/bean.jpg'
 import styles from './Login.module.css'
 import { User } from 'interfaces'
 import { authEndpoint } from 'api'
-import { getUser } from 'data/slices/user.slice'
+import { setUser } from 'data/slices/user.slice'
 
 const Login: React.FC = () => {
   const dispatch = useDispatch()
@@ -38,7 +38,7 @@ const Login: React.FC = () => {
       ) as User
 
       // Store user in Redux store
-      dispatch(getUser(decoded.handle))
+      dispatch(setUser(decoded.handle))
 
       // Trigger redirect using redirect state
       setRedirect(true)
