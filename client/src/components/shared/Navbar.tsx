@@ -17,6 +17,8 @@ import {
 import { makeStyles } from '@material-ui/core/styles'
 
 import styles from './Navbar.module.css'
+import { logOut } from 'data/slices/user.slice'
+import { useDispatch } from 'react-redux'
 
 const useStyles = makeStyles(() => ({
   notif: {
@@ -37,6 +39,7 @@ const useStyles = makeStyles(() => ({
 }))
 
 const Navbar: React.FC = () => {
+  const dispatch = useDispatch()
   const [anchorEl, setAnchorEl] = useState(null)
   const classes = useStyles()
 
@@ -51,6 +54,7 @@ const Navbar: React.FC = () => {
     setAnchorEl(null)
 
     if (event.target.id === 'logout') {
+      dispatch(logOut())
       sessionStorage.removeItem('token')
     }
   }

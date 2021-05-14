@@ -17,6 +17,9 @@ const userSlice = createSlice({
     loading: UserLoadingStates.idle,
   },
   reducers: {
+    logOut: (state) => {
+      state.user = { ...initialState }
+    },
     userLoading: (state) => {
       if (state.loading === UserLoadingStates.idle) {
         state.loading = UserLoadingStates.pending
@@ -33,7 +36,7 @@ const userSlice = createSlice({
 
 // Exports
 export const { reducer } = userSlice
-export const { userLoading, userReceived } = userSlice.actions
+export const { logOut, userLoading, userReceived } = userSlice.actions
 
 // Thunks
 export const setUser = (handle: string): AppThunk => async (dispatch) => {
