@@ -15,7 +15,9 @@ export class UsersController {
   }
 
   @Get(':handle')
-  getUser(@Param('handle') handle: string): Promise<Omit<User, 'password'>> {
+  getUser(
+    @Param('handle') handle: string
+  ): Promise<Omit<User, 'id' | 'password'>> {
     return this.service.getUser(handle)
   }
 
