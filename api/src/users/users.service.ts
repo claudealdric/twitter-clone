@@ -20,6 +20,11 @@ export class UsersService {
     return this.repository.createUser(dto)
   }
 
+  async getUser(handle: string) {
+    const user = await this.repository.findOne({ handle })
+    return user
+  }
+
   async getUsers(): Promise<User[]> {
     const users = await this.repository.find()
     return users
