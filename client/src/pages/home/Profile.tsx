@@ -19,7 +19,6 @@ import {
 import styles from './Profile.module.css'
 import { User } from 'interfaces'
 import { verify } from 'jsonwebtoken'
-import Navbar from 'components/shared/Navbar'
 
 const Profile: React.FC = () => {
   const [user, setUser] = useState<User>()
