@@ -5,18 +5,13 @@ import { AppThunk } from 'data/store'
 import { User } from 'interfaces'
 import { usersEndpoint } from 'api'
 
-enum UserLoadingStates {
-  pending = 'pending',
-  idle = 'idle',
-}
-
 const initialState: User = { handle: '', fullName: '', email: '' }
 
 const userSlice = createSlice({
   name: 'user',
   initialState: {
     user: { ...initialState },
-    loading: UserLoadingStates.idle,
+    loading: false,
   },
   reducers: {
     logOut: (state) => {
@@ -24,14 +19,14 @@ const userSlice = createSlice({
       history.push('/auth/login')
     },
     userLoading: (state) => {
-      if (state.loading === UserLoadingStates.idle) {
-        state.loading = UserLoadingStates.pending
+      if (!state.loading) {
+        state.loading = true
       }
     },
     userReceived: (state, action) => {
-      if (state.loading === UserLoadingStates.pending) {
+      if (state.loading) {
         state.user = action.payload
-        state.loading = UserLoadingStates.idle
+        state.loading = false
       }
     },
   },
