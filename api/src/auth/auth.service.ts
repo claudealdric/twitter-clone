@@ -34,7 +34,7 @@ export class AuthService {
     }
 
     // Create JWT
-    const payload = { handle: user.handle, fullName: user.fullName }
+    const payload = { handle: user.handle }
     const token = this.jwtService.sign(payload)
 
     return { token }

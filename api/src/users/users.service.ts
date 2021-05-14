@@ -20,6 +20,13 @@ export class UsersService {
     return this.repository.createUser(dto)
   }
 
+  async getUser(handle: string): Promise<Omit<User, 'id' | 'password'>> {
+    const user = await this.repository.findOne({ handle })
+    delete user.id
+    delete user.password
+    return user
+  }
+
   async getUsers(): Promise<User[]> {
     const users = await this.repository.find()
     return users
