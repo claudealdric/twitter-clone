@@ -4,15 +4,15 @@ import {
   AppBar,
   Badge,
   IconButton,
+  Menu,
   MenuItem,
   Toolbar,
-  Menu,
 } from '@material-ui/core'
 import {
   AccountCircle,
   ArrowDropDown,
-  Notifications,
   Home,
+  Notifications,
 } from '@material-ui/icons'
 import { makeStyles } from '@material-ui/core/styles'
 
