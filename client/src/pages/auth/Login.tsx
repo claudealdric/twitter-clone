@@ -35,7 +35,7 @@ const Login: React.FC = () => {
       const decoded = verify(
         data.token,
         process.env.REACT_APP_JWT_SECRET as string
-      ) as User
+      ) as Pick<User, 'handle'>
 
       // Store user in Redux store
       dispatch(setUser(decoded.handle))
