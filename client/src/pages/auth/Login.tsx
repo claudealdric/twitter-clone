@@ -1,12 +1,17 @@
 import { Button, FormControl, Grid, Input } from '@material-ui/core'
 import { Link, Redirect } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import { useState } from 'react'
+import { verify } from 'jsonwebtoken'
 
 import bean from 'images/bean.jpg'
 import styles from './Login.module.css'
+import { User } from 'interfaces'
 import { authEndpoint } from 'api'
+import { getUser } from 'data/slices/user.slice'
 
 const Login: React.FC = () => {
+  const dispatch = useDispatch()
   const [handle, setHandle] = useState('')
   const [password, setPassword] = useState('')
   const [redirect, setRedirect] = useState(false)
@@ -25,6 +30,15 @@ const Login: React.FC = () => {
 
       // Store token in session storage
       sessionStorage.setItem('token', data.token)
+
+      // Get user information from verified token
+      const decoded = verify(
+        data.token,
+        process.env.REACT_APP_JWT_SECRET as string
+      ) as User
+
+      // Store user in Redux store
+      dispatch(getUser(decoded.handle))
 
       // Trigger redirect using redirect state
       setRedirect(true)
